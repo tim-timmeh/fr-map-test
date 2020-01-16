@@ -24,7 +24,7 @@
 
 	var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
-	L.tileLayer('TheMap/{z}/{z}-{x}-{y}.jpg', {
+	L.tileLayer('./TheMap/{z}/{z}-{x}-{y}.jpg', {
 		maxZoom: 18,
 		attribution: 'attribution',
 		id: 'test ID'
