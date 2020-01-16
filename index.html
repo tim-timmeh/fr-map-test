@@ -1,0 +1,44 @@
+<html>
+<head>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    html, body, #mapid {
+      height: 100%;
+    }
+
+  </style>
+
+</head>
+
+<div id="mapid"></div>
+
+<script>
+  var mymap = L.map('mapid').setView([51.505, -0.09], 13); //Default
+  /*var map = L.map('map', { //Copy
+		    center:[34, -60],
+		    zoom: 7,
+		    layers: [baselayer]
+		    });*/
+
+  L.tileLayer('./TheMap/{z}/{x}/{y}.jpg', {
+    attribution: 'Test Attribution',
+    maxZoom: 18,
+    id: 'TheMapId',
+}).addTo(mymap);
+
+  </script>
+
+</html>
